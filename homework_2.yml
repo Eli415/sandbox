@@ -10,6 +10,24 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         body_pattern: '(done|DONE)+'
-        failure_message: 'Description cannot be empty!!'
-        success_message: 'Pull Request Successful! (Way to not leave the description empty.)'
-     <!-- TO DO: add way to make the PR fail -->
+          failure_message: 'Description cannot be empty!!'
+          success_message: 'Pull Request Successful! (Way to include a description!)'
+          
+          <!-- TO DO: add way to make the PR fail -->
+                - uses: mshick/add-pr-comment@v1
+                  with:
+                    message: |
+                      **Pull Request Successful! (Way to include a description!)**
+                    repo-token: ${{ secrets.GITHUB_TOKEN }}
+                    repo-token-user-login: 'github-actions[bot]' # The user.login for temporary GitHub tokens
+                    allow-repeats: false # This is the default
+                    
+<!-- HOLD
+#!/bin/bash
+
+STR='message'
+SUB='Done'
+if [[ "$STR" == *"$SUB"* ]]; then
+   
+fi 
+-->
