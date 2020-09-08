@@ -1,0 +1,15 @@
+on:
+  pull_request:
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/github-script@0.8.0 <!-- need both? -->
+    - uses: Hummingbird-RegTech/check-pr-body-action@v1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        body_pattern: '(done|DONE)+'
+        failure_message: 'Description cannot be empty!!'
+        success_message: 'Pull Request Successful! (Way to not leave the description empty.)'
+     <!-- TO DO: add way to make the PR fail -->
