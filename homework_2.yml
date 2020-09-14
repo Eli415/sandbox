@@ -5,29 +5,29 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/github-script@0.8.0 <!-- need both? -->
+    - uses: actions/github-script@0.8.0 #need both?
     - uses: Hummingbird-RegTech/check-pr-body-action@v1
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         body_pattern: '(done|DONE)+'
           failure_message: 'Description cannot be empty!!'
-          success_message: 'Pull Request Successful! (Way to include a description!)'
+          success_message: 'Pull Request Successful! Great job including a description!'
           
-          <!-- TO DO: add way to make the PR fail -->
-                - uses: mshick/add-pr-comment@v1
+          #TO DO: add PR fail 
+                - uses: actions/add-pr-comment@v1
                   with:
                     message: |
-                      **Pull Request Successful! (Way to include a description!)**
+                      **Pull Request Successful! Great job including a description!**
                     repo-token: ${{ secrets.GITHUB_TOKEN }}
                     repo-token-user-login: 'github-actions[bot]' # The user.login for temporary GitHub tokens
                     allow-repeats: false # This is the default
                     
-<!-- HOLD
+#HOLD
 #!/bin/bash
 
-STR='message'
-SUB='Done'
-if [[ "$STR" == *"$SUB"* ]]; then
+#STR='message'
+#SUB='Done'
+#if [[ "$STR" == *"$SUB"* ]]; then
    
-fi 
--->
+#fi 
+
