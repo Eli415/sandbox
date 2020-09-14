@@ -12,15 +12,6 @@ jobs:
         body_pattern: '(done|DONE)+'
           failure_message: 'Description cannot be empty!!'
           success_message: 'Pull Request Successful! Great job including a description!'
-          
-          #TO DO: add PR fail 
-                - uses: actions/add-pr-comment@v1
-                  with:
-                    message: |
-                      **Pull Request Successful! Great job including a description!**
-                    repo-token: ${{ secrets.GITHUB_TOKEN }}
-                    repo-token-user-login: 'github-actions[bot]' # The user.login for temporary GitHub tokens
-                    allow-repeats: false # This is the default
                     
 #HOLD
 #!/bin/bash
