@@ -5,8 +5,8 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/github-script@0.8.0 #need both?
-    - uses: Hummingbird-RegTech/check-pr-body-action@v1
+    - uses: actions/github-script@0.8.0 #needed?
+    - uses: Hummingbird-RegTech/check-pr-body-action@v1 #can this be local path, too?
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         body_pattern: '(done|DONE)+'
