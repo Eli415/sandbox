@@ -14,6 +14,6 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PULL_REQUEST_PATTERN: '^(.*Description.*Changes.*Tests.*)$' #.*((T|t)esting\s(D|d)one:).{5}.*
-        PULL_REQUEST_COMMENT: 'This is my pr comment template.'
+        PULL_REQUEST_COMMENT: 'Thank you for your code contribution!'
         ISSUE_PATTERN: '^(.*Description.*Behavior.*)$'
-        ISSUE_COMMENT: 'This is my issue comment template.'
+        ISSUE_COMMENT: 'Here is an issue. An issue is here.'
