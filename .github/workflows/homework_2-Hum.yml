@@ -8,16 +8,8 @@ jobs:
     - uses: Hummingbird-RegTech/check-pr-body-action@v1 #can this be local path, too?
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        body_pattern: '(done|DONE)+'
+        body_pattern: '(done|DONE)+' #.*((T|t)esting\s(D|d)one:).{5}.*
         failure_message: 'Description cannot be empty!!'
         success_message: 'Pull Request Successful! Great job including a description!'
-                    
-#HOLD
-#!/bin/bash
 
-#STR='message'
-#SUB='Done'
-#if [[ "$STR" == *"$SUB"* ]]; then
-   
-#fi 
 
