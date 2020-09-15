@@ -9,15 +9,9 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         body_pattern: '(done|DONE)+'
-        failure_message: 'Description cannot be empty!!'
-        success_message: 'Pull Request Successful! Great job including a description!'
-                    
-#HOLD
-#!/bin/bash
+        failure_message: "Description cannot be empty!!"
+        success_message: "Pull Request Successful! Great job including a description!"
+        
+#.*((T|t)esting\s(D|d)one:).{5}.*:
 
-#STR='message'
-#SUB='Done'
-#if [[ "$STR" == *"$SUB"* ]]; then
-   
-#fi 
 
