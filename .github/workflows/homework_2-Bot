@@ -4,10 +4,8 @@ jobs:
   assign:
     runs-on: ubuntu-latest
 
-steps:
-      - name: Assign user
-        env:
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-        run: |
-          curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -X POST -d '{"assignees": ["Eli415"]}' \
-          https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${PR_NUMBER}/assignees
+- name: Webhook POST Action
+  uses: muinmomin/webhook-action@v1.0.0
+  with:
+    url: ${{ secrets.WEBHOOK_URL }}
+    data: "{'command': 'publish'}"
