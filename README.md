@@ -1,5 +1,5 @@
 # Sandbox 🤘
-Best code sandbox ever
+Best code sandbox ever!
 
 What it does:
 - succeeds if there's a pull request description or issue with text: "Testing Done... something" (case insensitive)
