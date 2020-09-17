@@ -1,21 +1,12 @@
-name: Example workflow
-on: [issues, pull_request]
+on:
+  pull_request:
 jobs:
-  example:
-    name: RegEx Checker Job
+  comment:
     runs-on: ubuntu-latest
     steps:
-    - name: Run actions/checkout 
-      uses: actions/checkout@v1
+    - uses: Hummingbird-RegTech/check-pr-body-action@v1 #can this be local path, too?
       with:
-        fetch-depth: 1
-    - name: Run fabiankoestring/body-regex-validator-action 
-      uses: fabiankoestring/body-regex-validator-action@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        PULL_REQUEST_PATTERN: '.*((T|t)esting\s(D|d)one:).{5}.*' #'^(.*Description.*Changes.*Tests.*)$'
-        PULL_REQUEST_COMMENT: 'This is my pr comment template.'
-        ISSUE_PATTERN: '.*((T|t)esting\s(D|d)one:).{5}.*'
-        ISSUE_COMMENT: 'This is my issue comment template.'
-        failure_message: "Failed!"
-        success_message: "Success!"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        body_pattern: '(done|DONE)+'
+        failure_message: "Description cannot be empty!!"
+        success_message: "Pull Request Successful! Great job including a description!"
