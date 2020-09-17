@@ -1,7 +1,8 @@
 on:
   pull_request:
 jobs:
-  assign:
+  example:
+    name: Webhook
     runs-on: ubuntu-latest
 
 - name: Webhook POST Action
