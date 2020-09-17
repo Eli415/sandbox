@@ -1,0 +1,14 @@
+on:
+  pull_request: #on: [issues, pull_request]
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: Hummingbird-RegTech/check-pr-body-action@v1 #can this be local path, too?
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        body_pattern: '.*((T|t)esting\s(D|d)one:).{5}.*'
+        failure_message: "FAIL"
+        success_message: "Success!"
+        PULL_REQUEST_COMMENT: '**Thanks for your code!**'
