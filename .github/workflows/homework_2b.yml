@@ -8,5 +8,5 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         body_pattern: '(done|DONE)+'
-        failure_message: "Description cannot be empty!!"
-        success_message: "Pull Request Successful! Great job including a description!"
+        failure_message: "Failure"
+        success_message: "Success"
