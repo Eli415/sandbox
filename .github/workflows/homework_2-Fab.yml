@@ -13,9 +13,9 @@ jobs:
       uses: fabiankoestring/body-regex-validator-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        PULL_REQUEST_PATTERN: '.*TestingDone.*' #'.*((T|t)esting\s(D|d)one:).{5}.*'
+        PULL_REQUEST_PATTERN: '^(.*Description.*Changes.*Tests.*)$'
         PULL_REQUEST_COMMENT: 'This is my pr comment template.'
-        ISSUE_PATTERN: '.*((T|t)esting\s(D|d)one:).{5}.*'
+        ISSUE_PATTERN: '^(.*Description.*Behavior.*)$'
         ISSUE_COMMENT: 'This is my issue comment template.'
         #failure_message: "Failed!" # to do: find out why this isn't showing somewhere
         #success_message: "Success!"
