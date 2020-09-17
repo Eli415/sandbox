@@ -2,7 +2,7 @@ name: Example workflow
 on: [issues, pull_request]
 jobs:
   example:
-    name: Example job
+    name: RegEx Checker Job
     runs-on: ubuntu-latest
     steps:
     - name: Run actions/checkout 
@@ -14,6 +14,6 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PULL_REQUEST_PATTERN: '.*((T|t)esting\s(D|d)one:).{5}.*' #'^(.*Description.*Changes.*Tests.*)$'
-        PULL_REQUEST_COMMENT: '**Thank you for your code contribution! 🐙**'
+        PULL_REQUEST_COMMENT: 'This is my pr comment template.'
         ISSUE_PATTERN: '^(.*Description.*Behavior.*)$'
-        ISSUE_COMMENT: 'Here is an issue. An issue is here.'
+        ISSUE_COMMENT: 'This is my issue comment template.'
